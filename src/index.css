@@ -1,4 +1,48 @@
+:root {
+  --green: 50, 241, 50;
+  --orange: 255, 203, 34;
+  --text-light: 254, 254, 254;
+  --text-black: 46, 46, 46;
+  --black-background-1: 38, 38, 38;
+  --bg-white: 241, 244, 248;
+  --bg-white1: 252, 252, 252;
+  --bg-dark: 31, 31, 31;
+
+  --color-light-blue: 80, 115, 251;
+  --color-yellow-dark: 197, 188, 88;
+  --color-purple: 162, 128, 233;
+  --color-lighter-blue: 133, 173, 227;
+  --color-pink: 227, 106, 200;
+  --color-green: 112, 215, 165;
+  --color-blue: 95, 92, 224;
+  --color-red: 232, 103, 134;
+  --color-yellow: 241, 210, 67;
+
+
+
+  --border-10: 10px;
+  --border-5: 5px;
+
+  --shadow-around: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+  --shadow-bottom: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+  --hover-shadow: 0px 7px 8px 0px rgba(0, 0, 0, 0.45);
+  --hover1-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+
+
+  --transition-eo-15: all .15s ease-out;
+  --transition-eo-25: all .25s ease-out;
+  --transition-e-15: all .15s ease;
+  --transition-e-25: all .25s ease;
+  --transition-e-10: all .15s ease;
+  --transition-e-20: all .25s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
+  width: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +54,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+a {
+  text-decoration: none;
 }

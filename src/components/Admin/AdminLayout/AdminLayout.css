@@ -1,0 +1,226 @@
+nav {
+  display: flex;
+  height: 70px;
+  box-shadow: var(--shadow-bottom);
+  background-color: rgb(var(--bg-white1));
+  padding-inline: 50px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+nav>* {
+  display: flex;
+  align-items: center;
+}
+
+nav div>span {
+  margin-right: 10px;
+  padding: 0;
+  padding-top: 2px;
+  font-size: 20px;
+  margin-bottom: 0;
+  display: flex;
+  cursor: pointer;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+nav h2 {
+  color: rgb(var(--green));
+  cursor: pointer;
+  transition: var(--transition-eo-15);
+}
+
+nav h2:hover {
+  transform: scale(1.03);
+}
+
+.cooking {
+  color: rgb(var(--orange));
+}
+
+.search-container {
+  position: relative;
+  width: 400px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 13px;
+  padding-right: 1.5rem;
+  border-radius: 100vmax;
+  border: 1px solid rgb(var(--bg-dark), .1);
+  transition: .05s ease-out;
+  background-color: rgba(var(--bg-dark), .06);
+}
+
+.search-container input:focus {
+  border: 1px solid transparent;
+  outline: 3px solid rgb(var(--color-green), .5);
+}
+
+.search-container button {
+  position: absolute;
+  right: .5rem;
+  border-radius: 100vmax;
+  width: 30px;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid transparent;
+  color: rgb(var(--bg-white1));
+  background-color: rgb(var(--green));
+  cursor: pointer;
+  transition: var(--transition-eo-15);
+}
+
+.search-container button:hover {
+  transform: scale(1.1);
+}
+
+.search-container button:active {
+  transform: scale(1);
+}
+
+nav li {
+  width: 35px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 100vmax;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: var(--transition-eo-15);
+}
+
+nav ul li:nth-child(1) {
+  /* color: rgb(86, 86, 243); */
+  color: rgb(var(--color-blue));
+  background-color: rgba(var(--color-blue), 0.185);
+  box-shadow: 0 0 2px rgba(var(--color-blue), 0.931);
+}
+
+nav ul li:nth-child(1):hover {
+  outline: 2px solid rgba(var(--color-blue), 0.713);
+  outline-offset: -3px;
+}
+
+nav ul li:nth-child(2) {
+  color: rgb(var(--color-yellow));
+  background-color: rgba(var(--color-yellow), 0.185);
+  box-shadow: 0 0 2px rgba(var(--color-yellow), 0.931);
+
+}
+
+nav ul li:nth-child(2):hover {
+  outline: 2px solid rgba(var(--color-yellow), 0.713);
+  outline-offset: -3px;
+}
+
+nav ul li:nth-child(3) {
+  box-shadow: 0 0 2px rgba(var(--color-green), 1);
+}
+
+
+
+
+
+
+
+
+
+.sidebar-menu {
+  background-color: #fefefe;
+  position: fixed;
+  top: 55px;
+  left: 0;
+  width: 250px;
+  height: calc(100% - 70px);
+  padding: 10px;
+  box-shadow: 1px 1px 2px rgba(66, 66, 66, 0.733);
+  z-index: 900;
+}
+
+.sidebar-menu li>div,
+.sidebar-menu li>div span,
+.sidebar-menu li>div a {
+  transition: var(--transition-e-15);
+}
+
+.sidebar-menu li>div {
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  cursor: pointer;
+}
+
+.sidebar-menu li>div:hover,
+.sidebar-menu li>div.active {
+  background-color: rgba(var(--green), .8);
+  color: #fefefe;
+}
+
+
+.sidebar-menu li>div span {
+  font-size: 20px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.sidebar-menu li>div a {
+  font-size: 18px;
+  font-weight: 500px;
+  color: var(--text-dark);
+}
+
+.sidebar-menu li>div:hover a {
+  color: var(--text-light);
+}
+
+
+
+.sidebarmenu-submenu-items {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-left: 0;
+  background-color: rgba(var(--bg-dark), .06);
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  transition: var(--transition-e-25);
+}
+
+.sidebarmenu-submenu.active+.sidebarmenu-submenu-items {
+  opacity: 1;
+  height: max-content;
+  pointer-events: auto;
+}
+
+.sidebarmenu-submenu-items li {
+  padding: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: var(--transition-eo-15);
+}
+
+.sidebarmenu-submenu-items li:hover {
+  background-color: rgba(var(--color-green));
+}
+
+.sidebarmenu-submenu-items li>a {
+  color: rgb(var(--bg-dark));
+  padding-left: 20px;
+}
