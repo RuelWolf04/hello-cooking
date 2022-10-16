@@ -9,6 +9,7 @@
   left: 250px;
   width: calc(100% - 250px);
   padding: 10px;
+  overflow-x: auto;
 }
 
 .mb-2 {
@@ -31,6 +32,7 @@ label {
 .cards- {
   display: flex;
   gap: 5px;
+  flex-wrap: wrap;
 }
 
 .card- {
