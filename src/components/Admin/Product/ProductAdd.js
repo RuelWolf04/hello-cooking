@@ -1,19 +1,21 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 
 
 
 const ProductAdd = () => {
+  const [category, setCategory] = useState([])
   const [productName, setProductName] = useState('')
   const [productPrice, setProductPrice] = useState('')
   const [productDescription, setProductDescription] = useState('')
   const [productDirection, setProductDirection] = useState('')
   const [productPhoto, setProductPhoto] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('')
 
-  const handleSubmitForm = () => {
-    // e.preventDefault();
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
 
     let formData = new FormData();
     formData.append('productName', productName)
@@ -21,6 +23,7 @@ const ProductAdd = () => {
     formData.append('productDescription', productDescription)
     formData.append('productDirection', productDirection)
     formData.append('productPhoto', productPhoto)
+    formData.append('productCategory', selectedCategory)
     formData.append('function', 'insert')
 
     axios({
@@ -34,6 +37,15 @@ const ProductAdd = () => {
       console.log(response)
     })
   }
+
+
+  useEffect(() => {
+    const url = 'http://localhost/WD11_php/HC_db/category_tbl.php';
+    axios.get(url).then((res) => {
+      setCategory(res.data)
+    })
+
+  }, [])
 
 
 
@@ -52,6 +64,16 @@ const ProductAdd = () => {
         <div className="inputs">
           <label htmlFor="productPrice">Product Price:</label>
           <input type="text" name="productPrice" id="productPrice" value={productPrice} onChange={e => setProductPrice(e.target.value)} />
+        </div>
+        <div>
+          <select name="selectCategory" id="selectCategory" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+            <option value="" selected>Category</option>
+            {
+              category.map((data) => {
+                return <option value={data.category_id}>{data.category_name}</option>
+              })
+            }
+          </select>
         </div>
         <div className="inputs">
           <label htmlFor="productDescription">Product Desctiption:</label>

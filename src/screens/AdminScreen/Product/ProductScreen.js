@@ -1,7 +1,6 @@
 import React from 'react'
 import ProductContent from '../../../components/Admin/Product/ProductContent'
 import Header from '../../../components/Admin/AdminLayout/Header'
-import Footer from '../../../components/Admin/AdminLayout/Footer'
 import Sidebar from '../../../components/Admin/AdminLayout/Sidebar'
 
 const ProductScreen = () => {
